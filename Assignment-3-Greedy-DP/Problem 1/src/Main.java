@@ -6,12 +6,12 @@ public class Main {
         Arrays.sort(amounts);
 
         int count = 0;
-        int totalSpent = 0;
+        int remaining = budget;
 
         for (int i = 0; i < amounts.length; i++) {
-            if (totalSpent + amounts[i] <= budget) {
-                totalSpent += amounts[i];
+            if (amounts[i] <= remaining) {
                 count++;
+                remaining -= amounts[i];
             } else {
                 break;
             }
